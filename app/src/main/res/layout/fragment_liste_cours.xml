@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ListeCoursActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_departement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/txt_nomDepartement"
+            style="@style/texteAccent" />
+        <ImageButton
+            android:id="@+id/btn_voir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:padding="12dp"
+            app:srcCompat="@drawable/ic_baseline_open_in_new_24"
+            android:contentDescription="@string/btn_voir" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="?android:attr/buttonBarStyle"
+        >
+
+        <ImageButton
+            android:id="@+id/btn_precedent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_chevron_left_24"
+            android:contentDescription="@string/btn_precedent"
+
+            />
+        <ImageButton
+            android:id="@+id/btn_suivant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_chevron_right_24"
+            android:contentDescription="@string/btn_suivant"
+            />
+
+        <ImageButton
+            android:id="@+id/btn_ajouter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:srcCompat="@drawable/ic_baseline_add_circle_outline_24"
+
+            />
+
+
+    </LinearLayout>
+</LinearLayout>
