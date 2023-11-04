@@ -16,9 +16,6 @@ public class DetailsCoursActivity extends AppCompatActivity
 
     private static final String EXTRA_INDEXCOURANT = "indexcourant";
 
-    private TextView txtDepartement;
-    private TextView txtNumero;
-    private TextView txtTravaux;
     private int indexCourant;
 
 
@@ -26,6 +23,8 @@ public class DetailsCoursActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_cours);
+
+        indexCourant = getIntent().getIntExtra(EXTRA_INDEXCOURANT, 0);
     }
 
     public static Intent newIntent(Context packageContext, int indexCourant) {

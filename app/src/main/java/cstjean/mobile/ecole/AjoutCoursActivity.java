@@ -17,7 +17,7 @@ public class AjoutCoursActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_ajout_cours);
+        setContentView(R.layout.activity_ajout_cours);
     }
 
     public static Intent newIntent(Context packageContext) {
