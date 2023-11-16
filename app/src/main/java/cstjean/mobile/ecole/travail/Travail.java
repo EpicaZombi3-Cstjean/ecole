@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class Travail implements Cloneable{
     private final String nom;
-    private ♦Calendar dateRemise;
+    private Calendar dateRemise;
 
     public Travail(String nom, Calendar dateRemise) {
         this.nom = nom;

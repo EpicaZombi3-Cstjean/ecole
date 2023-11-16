@@ -25,7 +25,9 @@ public class SingletonEcole {
         listeCoursSession.add(coursSession);
     }
 
-
+    public List<CoursSession> getListeCoursSession() {
+        return listeCoursSession;
+    }
     public int getNbCoursSession() {
         return listeCoursSession.size();
     }

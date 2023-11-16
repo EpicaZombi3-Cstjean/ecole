@@ -8,7 +8,7 @@ import org.junit.Test;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class TestTravailEquipe {
+public class TestTravailEquipe extends TestTravail {
     @Test
     public void testAjoutCoequipiers() {
         TravailEquipe travail = (TravailEquipe) creerTravail("TP1",
@@ -28,7 +28,11 @@ public class TestTravailEquipe {
 
     }
 
+    @Override
     protected Travail creerTravail(String nom, Calendar dateRemise) {
-        return new TravailEquipe(nom, dateRemise);
+        TravailEquipe travail = new TravailEquipe(nom, dateRemise);
+        travail.ajouterCoequipier(12345, "Alex");
+        return travail;
     }
+
 }

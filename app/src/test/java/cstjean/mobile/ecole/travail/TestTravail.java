@@ -76,4 +76,14 @@ public class TestTravail {
         assertNotEquals("BLABLABLA", travailA);
 
     }
+
+    @Test
+    public void testHashCode() {
+        Calendar dateRemise = new GregorianCalendar(2023, Calendar.SEPTEMBER, 10);
+
+        Travail travailA = creerTravail("TP1", dateRemise);
+        Travail travailB = creerTravail("TP1", dateRemise);
+        assertEquals(travailA.hashCode(), travailB.hashCode());
+        assertEquals(travailA.hashCode(), travailA.hashCode());
+    }
 }
