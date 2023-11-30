@@ -30,7 +30,7 @@ public class TestCoursSession {
 
         Travail travail1 = new Travail("TP1", dateRemise);
         coursSession.ajouterTravail(travail1);
-        assertEquals(1, coursSession.getNbTravaux());
+        assertEquals(1, coursSession.getListeTravaux().size());
         assertEquals(travail1, coursSession.getTravail(0));
 
         Travail travail2 = new Travail("TP2", dateRemise);

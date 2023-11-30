@@ -46,6 +46,8 @@ public class CoursSession implements Comparable<CoursSession> {
         return travaux.get(index);
     }
 
+    public List<Travail> getListeTravaux() { return travaux;}
+
     public static int getCompteur() {
         return CoursSession.compteur;
     }

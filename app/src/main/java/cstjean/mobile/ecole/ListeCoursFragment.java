@@ -44,7 +44,6 @@ public class ListeCoursFragment extends Fragment {
         recyclerViewCours = view.findViewById(R.id.recycler_view_cours);
         recyclerViewCours.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-
         btnAjouter = view.findViewById(R.id.btn_ajouter); // À AJOUTER DANS EXERCICE FORMATIF!!!!!!
 
         btnAjouter.setOnClickListener(v -> {
@@ -72,6 +71,7 @@ public class ListeCoursFragment extends Fragment {
         super.onResume();
         SingletonEcole singletonEcole = SingletonEcole.getInstance();
         List<CoursSession> listeCoursSession = singletonEcole.getListeCoursSession();
+        // ICI CAR IL PEUT Y AVOIR DES MODIFICATIONS EN TEMPS RÉEL.
         adapterCoursSession = new CoursSessionListAdapter(listeCoursSession);
         recyclerViewCours.setAdapter(adapterCoursSession);
     }

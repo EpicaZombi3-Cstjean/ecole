@@ -9,6 +9,7 @@ public class Travail implements Cloneable{
     private final String nom;
     private Calendar dateRemise;
 
+    private boolean estTermine = false;
     public Travail(String nom, Calendar dateRemise) {
         this.nom = nom;
         this.dateRemise = dateRemise;
@@ -43,4 +44,11 @@ public class Travail implements Cloneable{
     }
 
 
+    public boolean estTermine() {
+        return estTermine;
+    }
+
+    public void setEstTermine(boolean estTermine) {
+        this.estTermine = estTermine;
+    }
 }

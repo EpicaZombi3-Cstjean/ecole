@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +25,6 @@ public class DetailsCoursFragment extends Fragment {
 
     private TextView txtDepartement;
     private TextView txtNumero;
-    private TextView txtTravaux;
     private Callbacks callbacks = null;
 
     @Override
@@ -36,17 +37,24 @@ public class DetailsCoursFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_details_cours, container, false);
 
-
         txtDepartement = view.findViewById(R.id.txt_departement);
         txtNumero = view.findViewById(R.id.txt_numero);
-        txtTravaux = view.findViewById(R.id.txt_travaux);
+
 
         int indexCourant = callbacks.getIndexCourant();
 
         CoursSession coursSession = SingletonEcole.getInstance().getCoursSession(indexCourant);
+
+        //
+        RecyclerView recyclerViewTravaux = view.findViewById(R.id.recycler_view_travaux);
+        recyclerViewTravaux.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        TravailListAdapter adapterTravaux = new TravailListAdapter(coursSession.getListeTravaux());
+        recyclerViewTravaux.setAdapter(adapterTravaux);
+        //
+
         txtDepartement.setText(coursSession.getDepartement());
         txtNumero.setText(coursSession.getNumero());
-        txtTravaux.setText(RapportTravaux.getRapportTravaux(coursSession));
 
         return view;
     }

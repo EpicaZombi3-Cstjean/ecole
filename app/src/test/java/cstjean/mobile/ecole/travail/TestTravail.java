@@ -20,10 +20,16 @@ public class TestTravail {
         assertEquals(travail1.getNom(), nomTravail1);
         assertEquals(dateRemise, travail1.getDateRemise());
 
+        assertFalse(travail1.estTermine());
+
         Travail travail2 = creerTravail("TP2", dateRemise);
         String nomTravail2 = travail2.getNom();
         assertEquals("TP2", nomTravail2);
         assertEquals(dateRemise, travail2.getDateRemise());
+
+        travail1.setEstTermine(true);
+
+        assertTrue(travail1.estTermine());
 
     }
 

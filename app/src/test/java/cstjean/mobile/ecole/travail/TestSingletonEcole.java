@@ -32,7 +32,7 @@ public class TestSingletonEcole {
 
         CoursSession cours2 = new CoursSession("Philo", "101");
         singleton.ajouterCoursSession(cours2);
-        assertEquals(2, singleton.getNbCoursSession());
+        assertEquals(2, singleton.getListeCoursSession().size());
         assertEquals(cours1, singleton.getCoursSession(0));
         assertEquals(cours2, singleton.getCoursSession(1));
     }
