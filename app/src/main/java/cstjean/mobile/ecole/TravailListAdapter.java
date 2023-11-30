@@ -55,7 +55,6 @@ class TravailViewHolder extends RecyclerView.ViewHolder {
         nomTravail = itemView.findViewById(R.id.txt_nom);
         dateRemise = itemView.findViewById(R.id.txt_date);
 
-        // chkComplete.setActivated(travail.estTermine());
         chkComplete.setOnClickListener(view -> {
             this.travail.setEstTermine(chkComplete.isChecked());
         });
@@ -64,6 +63,7 @@ class TravailViewHolder extends RecyclerView.ViewHolder {
     void bindTravail(Travail travail) {
         this.travail = travail;
         // ???
+        chkComplete.setChecked((travail.estTermine()));
         nomTravail.setText(travail.getNom());
         SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         dateRemise.setText(formatDate.format(travail.getDateRemise().getTime()));
